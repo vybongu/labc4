@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class AudioTrigger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private AudioSource audioSource;
+    void Start() { audioSource = GetComponent<AudioSource>(); }
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)) audioSource.Play();
+        if (Input.GetKeyDown(KeyCode.S)) audioSource.Stop();
     }
 }
